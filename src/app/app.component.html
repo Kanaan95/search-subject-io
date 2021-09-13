@@ -1,0 +1,14 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Seach I/O">
+    <div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill>
+      <search fxFlex="25%" fxLayoutAlign="space-between" (onSearch)="onSearch($event)"></search>
+      <results [queries]="queries" fxFlex="75%"></results>
+    </div>
+  </mat-tab>
+  <mat-tab label="Search Subject">
+    <div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill>
+      <search fxFlex="25%" [type]="'Subject'" fxLayoutAlign="space-between" (onSearch)="onSearch($event)"></search>
+      <results [type]="'Subject'" fxFlex="75%"></results>
+    </div>
+  </mat-tab>
+</mat-tab-group>

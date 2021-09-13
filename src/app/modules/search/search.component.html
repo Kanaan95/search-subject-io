@@ -1,0 +1,15 @@
+<div class="search">
+  <h3>Search {{type}}</h3>
+  <div class="search__filters">
+    <div *ngFor="let f of filters" (click)="updateFilters(f.code)" [ngClass]="{'selected': isSelected(f.code)}">
+      {{f.label}}
+    </div>
+  </div>
+  <div class="search__query">
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" [(ngModel)]="query">
+    </mat-form-field>
+    <button mat-stroked-button (click) ="search($event)" color="primary">Search</button>
+  </div>
+</div>

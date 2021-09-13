@@ -1,0 +1,18 @@
+<div class="results">
+
+  <h3> Results </h3>
+
+  <div *ngIf="type === 'IO'; else sub">
+    <h4>Using Angular's ngOnChanges:</h4>
+    Query: {{queries?.query}} <br/>
+  Filters: {{queries?.filters | json}} <br/>
+  </div>
+
+  <ng-template #sub>
+    <h4>Using Angular's Subject:</h4>
+    Query: {{obsQueries?.query}} <br/>
+  Filters: {{obsQueries?.filters | json}} <br/>
+  </ng-template>
+
+
+</div>
